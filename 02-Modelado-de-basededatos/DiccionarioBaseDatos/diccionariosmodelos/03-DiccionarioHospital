@@ -1,0 +1,26 @@
+**Tabla Doctor**
+| Campo       | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK | Referencia a | Descripción               |
+|-------------|--------------|--------|-----|-----|------|--------|------------------------|---------------|---------------------------|
+| `doctorid`  | INT          | -      | ✅  | ❌  | ❌   | ✅     | -                       | -             | Identificador del doctor  |
+| `nombre`    | NVARCHAR     | 50     | ❌  | ❌  | ❌   | ❌     |  -                      | -             | Nombre del doctor         |
+| `apPaterno` | NVARCHAR     | 50     | ❌  | ❌  | ❌   | ❌     |   -                     | -             | Apellido paterno          |
+| `apMaterno` | NVARCHAR     | 50     | ❌  | ❌  | ❌   | ❌     |    -                    | -             | Apellido materno          |
+| `cedula`    | INT          | -      | ❌  | ❌  | ❌   | ✅     |     -                   | -             | Cédula profesional        |
+
+**Tabla Paciente**
+| Campo        | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK | Referencia a | Descripción                |
+|--------------|--------------|--------|-----|-----|------|--------|------------------------|---------------|----------------------------|
+| `pacienteid` | INT          | -      | ✅  | ❌  | ❌   | ✅     |    -                    | -             | Identificador del paciente |
+| `nombre`     | NVARCHAR     | 50     | ❌  | ❌  | ❌   | ❌     |    -                    | -             | Nombre del paciente        |
+| `apPaterno`  | NVARCHAR     | 50     | ❌  | ❌  | ❌   | ❌     |    -                    | -             | Apellido paterno           |
+| `apMaterno`  | NVARCHAR     | 50     | ❌  | ❌  | ❌   | ❌     |    -                    | -             | Apellido materno           |
+
+**Tabla Consultar**
+| Campo            | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK | Referencia a         | Descripción                         |
+|------------------|--------------|--------|-----|-----|------|--------|------------------------|----------------------|-------------------------------------|
+| `numeroConsulta` | INT          | -      | ❌  | ✅  | ❌   | ❌     |-                        | -                    | Número de consulta                  |
+| `doctorid`       | INT          | -      | ❌  | ✅  | ❌   | ❌     |-                        | Doctor(doctorid)     | Doctor que atiende la consulta     |
+| `pacienteid`     | INT          | -      | ✅  | ✅  | ❌   | ❌     |-                        | Paciente(pacienteid) | Paciente que recibe la consulta    |
+| `fecha`          | DATE         | -      | ❌  | ❌  | ❌   | ❌     |-                        | -                    | Fecha de la consulta               |
+| `diagnóstico`    | NVARCHAR     | 100    | ❌  | ❌  | ❌   | ❌     |-                        | -                    | Diagnóstico emitido por el doctor  |
+

@@ -1,0 +1,24 @@
+**Tabla Curso**
+| Campo         | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK                      | Referencia a | Descripción                        |
+|---------------|--------------|--------|-----|-----|------|--------|--------------------------------------------|---------------|------------------------------------|
+| `numeroCurso` | INT          | -      | ✅  | ❌  | ❌   | ✅     | -                                 | -             | Identificador único del curso      |
+| `nombreCurso`      | NVARCHAR     | 50     | ❌  | ❌  | ❌   | ❌     | -               | -             | Nombre del curso                   |
+| `codigo`    | INT          | -     | ❌  | ❌  | ❌   | ✅     | - | -             | Codigo unico del curso |
+
+**Tabla Estudiante**
+| Campo              | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK              | Referencia a | Descripción                    |
+|--------------------|--------------|--------|-----|-----|------|--------|------------------------------------|---------------|--------------------------------|
+| `numeroEstudiante` | INT          | -      | ✅  | ❌  | ❌   | ✅     |                                 | -             | Identificador del estudiante   |
+| `nombre`           | NVARCHAR     | 50     | ❌  | ❌  | ❌   | ❌     | -    | -             | Nombre del estudiante          |
+| `apPaterno`        | NVARCHAR     | 50     | ❌  | ❌  | ❌   | ❌     |         -            | -             | Apellido paterno               |
+| `apMaterno`        | NVARCHAR     | 50     | ❌  | ❌  | ❌   | ❌     |        -             | -             | Apellido materno               |
+| `matricula`        | INT          | -      | ❌  | ❌  | ❌   | ✅     |-  | -             | Matrícula del estudiante       |
+
+**Tabla Inscribe**
+| Campo             | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK | Referencia a                  | Descripción                     |
+|-------------------|--------------|--------|-----|-----|------|--------|------------------------|-------------------------------|---------------------------------|
+| `numInscripcion`  | INT          | -      | ✅  | ❌  | ❌   | ✅     | -                   | -                             | Identificador de la inscripción |
+| `numeroEstudiante`| INT          | -      | ❌  | ✅  | ❌   | ❌     | -                   | Estudiante(numeroEstudiante) | Estudiante inscrito             |
+| `numCurso`        | INT          | -      | ❌  | ✅  | ❌   | ❌     | -                   | Curso(numeroCurso)           | Curso inscrito                  |
+
+

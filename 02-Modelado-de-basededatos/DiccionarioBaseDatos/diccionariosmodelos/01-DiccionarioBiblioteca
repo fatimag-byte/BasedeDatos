@@ -1,0 +1,26 @@
+**Tabla Libro**
+| Campo           | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK                      | Referencia a                    | Descripción                             |
+|----------------|--------------|--------|-----|-----|------|--------|--------------------------------------------|----------------------------------|-----------------------------------------|
+| `numeroLibro`     | INT          | -      | ✅  | ❌  | ❌   | ✅     | -                                       | -                                | Identificador del libro               |
+| `titulo`        | NVARCHAR      | 50    | ❌  | ❌  | ❌   | ❌     | -             | -                                | Titulo del libro             |
+| `autor`          | NVARCHAR          | 50      | ❌  | ❌  | ❌   | ❌     | -         | -                                | Nombre del autor del libro                     |
+| `isbn`        | INT      | -    | ❌  | ❌  | ❌   | ✅     |-                | -                                | Identificador unico del libro                         |
+| `cantidad`      | INT          | -      | ❌  | ❌  | ❌   | ❌     | -                                        | -              | Cantidad de libros disponibles    |
+
+**Tabla Prestamo**
+| Campo           | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK                      | Referencia a                    | Descripción                             |
+|----------------|--------------|--------|-----|-----|------|--------|--------------------------------------------|----------------------------------|-----------------------------------------|
+| `numeroPrestamo`     | INT          | -     | ✅  | ❌  | ❌   | ✅     | -                                       | -                                | Identificador del numero de prestamo del libro               |
+| `numeroLibro`        | INT      | -    | ❌  | ✅  | ❌   | ✅     | -             |  Libro (numeroLibro)                               | Identificador numero del libro             |
+| `numeroLector`          | INT          | -      | ❌  | ❌  | ❌   | ❌     | -         | -                                | Nombre del autor del libro                     |
+| `isbn`        | INT      | 50    | ❌  | ✅  | ❌   |   ✅   |-                |   Lector (numeroLector)                              | Identificador del numero de lector
+
+**Tabla Lector**
+| Campo           | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK                      | Referencia a                    | Descripción                             |
+|----------------|--------------|--------|-----|-----|------|--------|--------------------------------------------|----------------------------------|-----------------------------------------|
+| `numeroLector`     | INT          | -      | ✅  | ❌  | ❌   | ✅     | -                                       | -                                | Identificador del numero de lector              |
+| `Nombre`        | NVARCHAR      | 50    | ❌  | ❌  | ❌   | ❌     | -           | -                                | Nombre completo del lector            |
+| `Apellido1`          | NVARCHAR   |50    | ❌  | ❌  | ❌   | ❌     | -         | -                                | Apellido 1 del lector                      |
+| `Apellido2`        | NVARCHAR      |50    | ❌  | ❌  | ❌   | ❌     | -                   | -                  |Apellido 2 del lector   
+ `numMembresia`        | INT     |-    | ❌  | ❌  | ❌   | ✅     | -                   | -                  |Apellido 2 del lector     
+
