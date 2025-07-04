@@ -1,26 +1,26 @@
 **Tabla Clientes**
+| Campo         | Tipo de Dato | Tamaño | PK | FK | Nulo | Único | Restricciones / CHECK                                                 | Referencia a | Descripcion                       |
+| ------------- | ------------ | ------ | -- | -- | ---- | ----- | --------------------------------------------------------------------- | ------------ | --------------------------------- |
+| `numCliente`  | INT          | -      | ✅  | ❌  | ❌    | ✅     | > 0                                                                   | -            | Identificador del cliente         |
+| `Nombre`      | NVARCHAR     | 20     | ❌  | ❌  | ❌    | ❌     | solo letras A-Z y espacios, longitud >= 3                             | -            | Nombre completo del cliente       |
+| `Apellido1`   | NVARCHAR     | 20     | ❌  | ❌  | ❌    | ❌     | solo letras A-Z, longitud >= 2                                        | -            | Apellido 1 del cliente            |
+| `Apellido2`   | NVARCHAR     | 20     | ❌  | ❌  | ❌    | ❌     | solo letras A-Z, longitud >= 2                                        | -            | Apellido 2 del cliente            |
+| `telefono`    | NCHAR        | 12     | ❌  | ❌  | ✅    | ❌     | -                                              | -            | Numero celular del cliente        |
+| `calle`       | NVARCHAR     | 20     | ❌  | ❌  | ❌    | ❌     | longitud >= 3                                                         | -            | Calle de la direccion del cliente |
+| `numeroCalle` | NVARCHAR     | 12     | ❌  | ❌  | ✅    | ❌     | solo numeros o combinacion alfanumerica                               | -            | Numero de calle del cliente       |
+| `ciudad`      | NVARCHAR     | 12     | ❌  | ❌  | ❌    | ❌     | solo letras A-Z y espacios                                            | -            | Ciudad de residencia del cliente  |
+| `curp`        | NCHAR        | 18     | ❌  | ❌  | ❌    | ✅     |- | -            | CURP del cliente                  |
 
-| Campo           | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK                      | Referencia a                    | Descripción                             |
-|----------------|--------------|--------|-----|-----|------|--------|--------------------------------------------|----------------------------------|-----------------------------------------|
-| `numCliente`     | INT          | -      | ✅  | ❌  | ❌   | ✅     | -                                       | -                                | Identificador del cliente               |
-| `Nombre`        | NVARCHAR      | 20    | ❌  | ❌  | ❌   | ❌     | -           | -                                | Nombre completo del cliente             |
-| `Apellido1`          | NVARCHAR   | 20    | ❌  | ❌  | ❌   | ❌     | -         | -                                | Apellido 1 del cliente                        |
-| `Apellido2`        | NVARCHAR      | 20    | ❌  | ❌  | ❌   | ❌     | -                   | -                  |Apellido 2 del cliente         
-| `telefono`      | NCHAR          | 12      | ❌  | ❌   | ✅    | ❌     | -                                       | -            | Numero celular del cliente    |
-| `calle`      | NVARCHAR          | 20      | ❌  | ❌   | ❌   | ❌     | -                                       | -            | Calle de la direccion del cliente    |
-| `numeroCalle`      | NVARCHAR          | 12      | ❌  | ❌   | ✅    | ❌     | -                                       | -            | Numero de calle del cliente    |
-| `ciudad`      | NVARCHAR          | 12      | ❌  | ❌   | ❌   | ❌     | -                                       | -            | Ciudad de residencia del cliente    |
-| `curp`      | NCHAR          | 18      |  ❌ | ❌   | ❌   | ✅   | -                                       | -            | CURP  del cliente    |
 
 **Tabla Renta**
+| Campo          | Tipo de Dato | Tamaño | PK | FK | Nulo | Único | Restricciones / CHECK                                    | Referencia a          | Descripcion                               |
+| -------------- | ------------ | ------ | -- | -- | ---- | ----- | -------------------------------------------------------- | --------------------- | ----------------------------------------- |
+| `numRenta`     | INT          | -      | ✅  | ❌  | ❌    | ✅     | > 0                                                      | -                     | Identificador de la renta                 |
+| `numCliente`   | INT          | -      | ❌  | ✅  | ❌    | ❌     | > 0                                                      | Clientes(NumCliente)  | Idenatificador del cliente                |
+| `numVehiculo`  | INT          | -      | ❌  | ✅  | ❌    | ❌     | > 0                                                      | Vehiculo(numVehiculo) | Idenatificador del vehiculo               |
+| `fechaInicio`  | DATE         | -      | ❌  | ❌  | ❌    | ❌     | - | -                     | Fecha de inicio de la renta del vehiculo  |
+| `fechaTermino` | DATE         | -      | ❌  | ❌  | ❌    | ❌     | - | -                     | Fecha de termino de la renta del vehiculo |
 
-| Campo           | Tipo de Dato | Tamaño | PK  | FK  | Nulo | Único | Restricciones / CHECK                      | Referencia a                    | Descripción                             |
-|----------------|--------------|--------|-----|-----|------|--------|--------------------------------------------|----------------------------------|-----------------------------------------|
-| `numRenta`     | INT          |-      | ✅  | ❌  | ❌   | ✅     | -                                       | -                                | Identificador de la renta               |
-| `numCliente`        | INT      | -   | ❌  | ✅  | ❌   | ❌     | -           | Clientes (NumCliente)                                | Idenatificador del cliente             |
-| `numVehiculo`          | INT   | -    | ❌  | ✅  | ❌   | ❌     | -         | Vehiculo(numVehiculo)                                | Idenatificador del vehiculo                       |
-| `fechaInicio`        | DATE      | 20    | ❌  | ❌  | ❌   | ❌     | -                   | -                  |Fecha de inicio de la renta del vehiculo         
-| `fechaTermino`      | DATE          | 12      | ❌  | ❌   | ❌   | ❌     | -                                       | -            | Fecha de termino de la renta del vehiculo    |
 
 **Tabla Vehiculo**
 
